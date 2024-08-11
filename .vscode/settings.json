@@ -1,0 +1,34 @@
+{
+    "files.autoSave": "onFocusChange",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "fira-code-nerd, FiraCode Nerd Font, Consolas, 'Courier New', monospace",
+    "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false,
+    "workbench.preferredLightColorTheme": "Tokyo City Lighter",
+    "workbench.preferredHighContrastLightColorTheme": "Tokyo City No Italic",
+    "workbench.colorTheme": "Tokyo City",
+    "workbench.preferredDarkColorTheme": "Tokyo City",
+    "workbench.preferredHighContrastColorTheme": "Tokyo City Darker",
+    "material-icon-theme.activeIconPack": "angular",
+    "material-icon-theme.enableLogging": false,
+    "material-icon-theme.files.associations": {},
+    "material-icon-theme.opacity": 0.5,
+    "material-icon-theme.saturation": 0.5,
+    "todo-tree.general.schemes": [
+        "file",
+        "ssh",
+        "untitled",
+        "vscode-notebook-cell",
+        "output"
+    ],
+    "todo-tree.general.showActivityBarBadge": true,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.highlights.useColourScheme": true,
+    "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules/*/**",
+        "**/dist/*/**",
+        "**/build/*/**"
+    ],
+    "todo-tree.filtering.ignoreGitSubmodules": true,
+    "todo-tree.filtering.useBuiltInExcludes": "file excludes",
+    "remote.autoForwardPorts": true
+}

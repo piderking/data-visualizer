@@ -7,6 +7,7 @@ import Stats from 'three/examples/jsm/libs/stats.module'
 
 import {gui, setDebug, debug_tools} from "./lib/debug.js"
 import {AObject, AMesh,  Aobjects, AMeshes } from './lib/object.js'
+import { BarGraph } from './lib/chart.js';
 const stats = Stats()
 
 export var scene;
@@ -37,8 +38,7 @@ init().then(animate);
 // For Highlight CHanger
 var hightlighted;
 //var obj = new AObject("sdfsdf")
-var mes = new AMesh("sdfsdf", new THREE.BoxGeometry(.24, .24, .24), new THREE.MeshBasicMaterial({color: "#9F2B68"}))
-new AMesh("sdfsdf", new THREE.BoxGeometry(.24, .24, .24), new THREE.MeshBasicMaterial({color: "#9A2B68"}))
+
 var outline_gui = gui.add(debug_tools, "outline", AMeshes.map(aob => aob.uuid)).onFinishChange((val)=>{
   
   hightlighted?.setHighLight(false)
@@ -46,14 +46,6 @@ var outline_gui = gui.add(debug_tools, "outline", AMeshes.map(aob => aob.uuid)).
   hightlighted = AMeshes.find((hit)=> hit.uuid == val)
   
   hightlighted.setHighLight(true)
-
-  /* 
-  console.log(obj)
-  obj.translateX(10)
-  console.log(obj.position)
-  console.log(obj.children.forEach((child)=>{console.log(child.position)}))
-
-  */
 
 })
 
@@ -118,16 +110,26 @@ async function createGUI(){
 }
 async function createMesh(){
   
-    
+    new BarGraph("Bar Graph", [
+      [1, 1, 1],
+      [2, 2, 2],
+
+
+      
+    ], 1
+  )
 
     point_mat = new THREE.PointsMaterial({
       color: palette.color2,
       size: .1
     })
 
+
+    // Points
+    //new AMesh("sdfsdf", new THREE.BoxGeometry(.24, .24, .24), new THREE.MeshBasicMaterial({color: "#9A2B68"}))
+
     var g = 2
     var c = 0
-    // Points
     points = new THREE.Points(
       new THREE.BufferGeometry().setFromPoints(Array(props.points).fill(1).map((y, n) => (y+n)/10).map(x => new THREE.Vector3((0 + Math.cos(x) * 1), (x ** props.eq)/75, (0 + Math.sin(x) * 1)))),
       point_mat,

@@ -45,9 +45,9 @@ export class AObject extends THREE.Object3D{
         
         // Euler
         this.euler_gui = this.rotation_gui.addFolder("Euler")
-        this.euler_gui.add(this.quaternion, "x", -360, 360, 1)
-        this.euler_gui.add(this.quaternion, "y", -360, 360, 1)
-        this.euler_gui.add(this.quaternion, "z", -360, 360, 1)
+        this.euler_gui.add(this.rotation, "x", -360, 360, 1)
+        this.euler_gui.add(this.rotation, "y", -360, 360, 1)
+        this.euler_gui.add(this.rotation, "z", -360, 360, 1)
 
         // Visible
         this.visible_gui = this.gui.add(this, "visible")
@@ -139,9 +139,9 @@ export class AMesh extends THREE.Mesh{
         
         // Euler
         this.euler_gui = this.rotation_gui.addFolder("Euler")
-        this.euler_gui.add(this.quaternion, "x", -360, 360, 1)
-        this.euler_gui.add(this.quaternion, "y", -360, 360, 1)
-        this.euler_gui.add(this.quaternion, "z", -360, 360, 1)
+        this.euler_gui.add(this.rotation, "x", -360, 360, 1)
+        this.euler_gui.add(this.rotation, "y", -360, 360, 1)
+        this.euler_gui.add(this.rotation, "z", -360, 360, 1)
 
         // Visible
         this.visible_gui = this.gui.add(this, "visible")
@@ -186,6 +186,7 @@ export class AMesh extends THREE.Mesh{
         scene.add( this.highlight_mesh );
         
         this.add(this.axis)
+        this.axis.visible = this.hasAxis
         
         this.add(this.highlight_mesh)
         
